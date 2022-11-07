@@ -138,8 +138,7 @@
           animation-name: fa-beat;
   -webkit-animation-delay: 0;
           animation-delay: 0;
-  -webkit-animation-delay: var(--fa-animation-delay, 0);
-          animation-delay: var(--fa-animation-delay, 0);
+    animation-delay: var(--fa-animation-delay, 0);
   -webkit-animation-direction: normal;
           animation-direction: normal;
   -webkit-animation-direction: var(--fa-animation-direction, normal);
@@ -156,6 +155,10 @@
           animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
           animation-timing-function: var(--fa-animation-timing, ease-in-out); }
+
+.fa-beat {
+    -webkit-animation-delay: var(--fa-animation-delay, 0);
+}
 
 .fa-fade {
   -webkit-animation-name: fa-fade;
