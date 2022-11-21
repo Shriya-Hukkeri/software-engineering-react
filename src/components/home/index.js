@@ -25,7 +25,7 @@ const Home = () => {
     return () => {isMounted = false;}
   }, []);
   const createTuit = () =>
-      service.createTuit(userId, {tuit})
+      service.createTuit("me", {tuit})
           .then(findTuits)
   const deleteTuit = (tid) =>
       service.deleteTuit(tid)
@@ -35,7 +35,6 @@ const Home = () => {
       <div className="border border-bottom-0">
         <h4 className="fw-bold p-2">Home Screen</h4>
         {
-          uid &&
           <div className="d-flex">
             <div className="p-2">
               <img className="ttr-width-50px rounded-circle"
@@ -68,7 +67,7 @@ const Home = () => {
           </div>
         }
       </div>
-      <Tuits tuits={tuits} deleteTuit={deleteTuit}/>
+      <Tuits tuits={tuits} refreshTuits={findTuits()}/>
     </div>
   );
 };
