@@ -1,28 +1,53 @@
 import React from "react";
 
-export default class TuitStats extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className="row mt-2">
-        <div className="col">
-          <i className="far fa-message me-1"></i>
-          {this.props.tuit.stats && this.props.tuit.stats.replies}
-        </div>
-        <div className="col">
-          <i className="far fa-retweet me-1"></i>
-          {this.props.tuit.stats && this.props.tuit.stats.retuits}
-        </div>
-        <div className="col">
-          <i className="far fa-heart me-1"></i>
-          {this.props.tuit.stats && this.props.tuit.stats.likes}
-        </div>
-        <div className="col">
-          <i className="far fa-inbox-out"></i>
-        </div>
-      </div>
-    );
-  }
-}
+const TuitStats = ({tuit, likeTuit, dislikeTuit}) => {
+	
+	return (
+		<div className="row mt-2">
+			<div className="col">
+				<i className="far fa-message me-1"></i>
+				<span className="ttr-stats-replies">
+         			 {tuit.stats && tuit.stats.replies}
+       			</span>
+			</div>
+			
+			
+			<div className="col">
+				<i className="far fa-retweet me-1"></i>
+				<span className="ttr-stats-retuits">
+         			 {tuit.stats && tuit.stats.retuits}
+        		</span>
+			</div>
+			
+			<div className="col">
+        		<span className="ttr-like-tuit-click" onClick={() => likeTuit(tuit)}>
+          			{tuit?.stats?.likes > 0 && (
+						<i className="fa fa-thumbs-up me-1" style={{color: "red"}}></i>
+					)}
+					{tuit?.stats?.likes <= 0 && (
+						<i className="fa fa-thumbs-up me-1"></i>
+					)}
+					<span className="ttr-stats-likes">
+            			{tuit.stats && tuit.stats.likes}
+          			</span>
+        		</span>
+			</div>
+			<div className="col">
+				<span className="ttr-dislike-tuit-click" onClick={() => dislikeTuit(tuit)}>
+          			{tuit.stats && tuit.stats.dislikes && tuit.stats.dislikes > 0 && (
+						<i className="fa fa-thumbs-down me-1" style={{color: "red"}}></i>
+					)}
+					<span className="ttr-stats-dislikes">
+            			{tuit.stats && tuit.stats.dislikes}
+          			</span>
+       			 </span>
+			</div>
+			
+			<div className="col">
+				<i className="far fa-inbox-out"></i>
+			</div>
+		</div>
+	);
+};
+
+export default TuitStats;
