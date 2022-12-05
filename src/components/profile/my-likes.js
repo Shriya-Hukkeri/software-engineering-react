@@ -4,15 +4,12 @@ import Tuits from "../tuits";
 
 const MyLikes = () => {
 	const [likedTuits, setLikedTuits] = useState([]);
-	const findTuitsILike = () =>
-		service.findAllTuitsLikedByUser("me")
-			.then((tuits) => setLikedTuits(tuits));
+	const findTuitsILike = () => service.findAllTuitsLikedByUser("me")
+		.then((tuits) => setLikedTuits(tuits));
 	useEffect(findTuitsILike, []);
 	
-	return (
-		<div>
-			<Tuits tuits={likedTuits} refreshTuits={findTuitsILike}/>
-		</div>
-	);
+	return (<div>
+		<Tuits tuits={likedTuits} refreshTuits={findTuitsILike}/>
+	</div>);
 };
 export default MyLikes;

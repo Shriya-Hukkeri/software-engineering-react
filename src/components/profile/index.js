@@ -30,8 +30,9 @@ const Profile = () => {
 	return (
 		<div className="ttr-profile">
 			<div className="border border-bottom-0">
-				<h4 className="p-2 mb-0 pb-0 fw-bolder">{profile.username}<i
-					className="fa fa-badge-check text-primary"></i></h4>
+				<h4 className="p-2 mb-0 pb-0 fw-bolder">
+					{profile.username}
+					<i className="fa fa-badge-check text-primary"></i></h4>
 				<span className="ps-2">67.6K Tuits</span>
 				<div className="mb-5 position-relative">
 					<img className="w-100" src="../images/nasa-profile-header.jpg"/>
@@ -52,7 +53,7 @@ const Profile = () => {
 				
 				<div className="p-2">
 					<h4 className="fw-bolder pb-0 mb-0">
-						NASA<i className="fa fa-badge-check text-primary"></i>
+						{profile.username}<i className="fa fa-badge-check text-primary"></i>
 					</h4>
 					<h6 className="pt-0">@{profile.username}</h6>
 					<p className="pt-2">
@@ -71,6 +72,7 @@ const Profile = () => {
 					</p>
 					<b>178</b> Following
 					<b className="ms-4">51.1M</b> Followers
+					
 					<ul className="mt-4 nav nav-pills nav-fill">
 						<li className="nav-item">
 							<Link to=""
@@ -97,19 +99,22 @@ const Profile = () => {
 								  className="nav-link">
 								Dislikes</Link>
 						</li>
+					
 					</ul>
 				</div>
 				<MyTuits className={`${location.pathname.indexOf('mytuits') >= 0 ? '':'.d-none'}`} />
 			</div>
 			
 			<Routes>
-				<Route path="/mytuits" element={<MyTuits/>}></Route>
-				<Route path="/tuits-and-replies" element={<TuitsAndReplies/>}></Route>
-				<Route path="/media" element={<Media/>}></Route>
-				<Route path="/mylikes" element={<MyLikes/>}></Route>
-				<Route path="/mydislikes" element={<MyDislikes/>}></Route>
+				<Route path="/mytuits" element={<MyTuits/>}/>
+				<Route path="/tuits-and-replies" element={<TuitsAndReplies/>}/>
+				<Route path="/media" element={<Media/>}/>
+				<Route path="/mylikes" element={<MyLikes/>}/>
+				<Route path="/mydislikes" element={<MyDislikes/>}/>
 			</Routes>
+		
 		</div>
 	);
+	
 }
 export default Profile;

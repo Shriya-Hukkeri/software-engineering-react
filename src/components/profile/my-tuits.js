@@ -7,9 +7,11 @@ const MyTuits = () => {
 	const findMyTuits = () =>
 		service.findTuitByUser("me")
 			.then(tuits => setTuits(tuits));
+	console.log(tuits)
+	// on load invoke findMyTuits
 	useEffect(findMyTuits, []);
-	
-	return (
+	return(
+		// render my tuits and pass refresh(findMyTuits) event handler
 		<Tuits tuits={tuits}
 			   refreshTuits={findMyTuits}/>
 	);
