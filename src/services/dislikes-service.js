@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = "https://fse-node-deployment.herokuapp.com";
 const USERS_API = `${BASE_URL}/users`;
+
 
 const api = axios.create({
 	withCredentials: true

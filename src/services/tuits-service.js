@@ -1,10 +1,10 @@
 import axios from "axios";
 //const BASE_URL = "http://my-node-express-project-env.eba-hxq4pgvm.us-east-1.elasticbeanstalk.com"
 //const TUITS_API = "https://fse-node-deployment.herokuapp.com/tuits"
-const USERS_API = "http://localhost:4000/users"
-const TUITS_API = "http://localhost:4000/tuits"
-// const USERS_API = "https://fse-node-deployment.herokuapp.com/users"
-// const TUITS_API = "https://fse-node-deployment.herokuapp.com/tuits"
+// const USERS_API = "http://localhost:4000/users"
+// const TUITS_API = "http://localhost:4000/tuits"
+const USERS_API = "https://fse-node-deployment.herokuapp.com/users"
+const TUITS_API = "https://fse-node-deployment.herokuapp.com/tuits"
 
 const api = axios.create({
 	withCredentials: true
